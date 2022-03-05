@@ -1,8 +1,10 @@
-package com.ebookfrenzy.cahiss;
+package com.ebookfrenzy.cahiss.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.ebookfrenzy.cahiss.R;
 
 public class MainActivity extends AppCompatActivity {
 
