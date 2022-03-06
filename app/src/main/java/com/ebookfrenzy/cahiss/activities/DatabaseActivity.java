@@ -16,9 +16,9 @@ public class DatabaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_database);
+        setContentView(R.layout.activity_display_persons);
 
-        // recyclerView = findViewById(R.id.)
+        recyclerView = findViewById(R.id.userRecyclerView);
 
         personDAO = PersonDatabase.getDBInstance(this).personDAO();
 
