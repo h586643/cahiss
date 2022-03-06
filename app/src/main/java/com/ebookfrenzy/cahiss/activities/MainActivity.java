@@ -2,6 +2,7 @@ package com.ebookfrenzy.cahiss.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -21,6 +22,14 @@ public class MainActivity extends AppCompatActivity {
         Button startQuizButton = findViewById(R.id.startQuizButton);
         Button listOfPersonsButton = findViewById(R.id.databaseButton);
 
-        // addPersonButton.setOnClickListener(
+        addPersonButton.setOnClickListener(view -> startActivity(
+                new Intent(MainActivity.this,
+                AddPersonActivity.class)));
+        startQuizButton.setOnClickListener(view -> startActivity(
+                new Intent(MainActivity.this,
+                QuizActivity.class)));
+        listOfPersonsButton.setOnClickListener(view -> startActivity(
+                new Intent(MainActivity.this,
+                DatabaseActivity.class)));
     }
 }

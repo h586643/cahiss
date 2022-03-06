@@ -7,6 +7,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ebookfrenzy.cahiss.R;
+
 public class PersonView extends RecyclerView.ViewHolder {
 
     ImageView imageView;
@@ -15,8 +17,8 @@ public class PersonView extends RecyclerView.ViewHolder {
 
     public PersonView(@NonNull View itemView) {
         super(itemView);
-        // imageView = itemView.findViewById(R.id.);
-        // name = itemView.findViewById(R.id.);
-        // delete = itemView.findViewById(R.id).;
+        imageView = itemView.findViewById(R.id.cardImage);
+        name = itemView.findViewById(R.id.cardName);
+        delete = itemView.findViewById(R.id.delete);
     }
 }
