@@ -4,7 +4,6 @@ import android.app.Person;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
 
 import androidx.room.Database;
 import androidx.room.Room;
