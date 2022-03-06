@@ -10,8 +10,8 @@
         android:layout_width="120dp"
         android:layout_height="65dp"
         android:layout_marginStart="270dp"
-        android:text="Add new"
-        android:onClick="addEntry"
+        android:text="Legg til ny person"
+        android:onClick="addPerson"
         android:backgroundTint="@color/green"
         />
 
@@ -30,7 +30,7 @@
         android:layout_width="120dp"
         android:layout_height="65dp"
         android:layout_marginStart="140dp"
-        android:onClick="sortReversed"
+        android:onClick="sortAlphabeticallyReversed"
         android:text="Sorter fra Å-A"
         />
 
