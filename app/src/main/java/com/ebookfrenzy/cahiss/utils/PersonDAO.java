@@ -6,7 +6,7 @@ import java.util.List;
 @Dao
 public interface PersonDAO {
 
-    @Query("SELECT * FROM persons")
+    @Query("Select * from persons")
     List<Person> getAllPersons();
 
     @Insert

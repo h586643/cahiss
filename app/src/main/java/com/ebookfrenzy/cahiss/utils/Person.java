@@ -19,6 +19,8 @@ public class Person {
 
     boolean correctPerson;
 
+    public Person() {
+    }
 
     // Getter & setter for ID
     public int getId() {
