@@ -1,5 +1,7 @@
 package com.ebookfrenzy.cahiss.utils;
 
+import android.os.Build;
+
 import androidx.annotation.RequiresApi;
 
 import java.util.Collection;
@@ -25,6 +27,7 @@ public class SorterHelper {
         });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void sortAlphabeticallyReversed() {
         this.personList.sort(Comparator.comparing(Person::getName, Comparator.reverseOrder()));
     }

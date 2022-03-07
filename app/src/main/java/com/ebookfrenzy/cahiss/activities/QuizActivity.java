@@ -1,5 +1,6 @@
 package com.ebookfrenzy.cahiss.activities;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,10 +50,13 @@ public class QuizActivity extends AppCompatActivity {
         };
 
         model.getScore().observe(this, scoreObserver);
+
         personDAO = PersonDatabase.getDBInstance(this).personDAO();
     }
 
     public void onNextQuestion(View view) {
+        personDAO = PersonDatabase.getDBInstance(this).personDAO();
+
         List<Person> personList = personDAO.getAllPersons();
 
         Randomizer randomizer = new Randomizer(personList);
@@ -70,9 +74,9 @@ public class QuizActivity extends AppCompatActivity {
         List<Person> answerOptionsList = randomizer.generateAnswerOptions();
         imageView.setImageBitmap(ImageConverter.convertByteArrayToImage(correctPerson.getImage()));
 
-        answer1.setText(personList.get(0).getName());
-        answer2.setText(personList.get(1).getName());
-        answer3.setText(personList.get(2).getName());
+        answer1.setText(answerOptionsList.get(0).getName());
+        answer2.setText(answerOptionsList.get(1).getName());
+        answer3.setText(answerOptionsList.get(2).getName());
 
         onClickAnswer(view, answer1, answer2, answer3, correctPerson, score, model);
     }

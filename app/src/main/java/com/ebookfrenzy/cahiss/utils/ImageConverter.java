@@ -14,7 +14,7 @@ public class ImageConverter {
         return stream.toByteArray();
     }
 
-    public static Bitmap convertByteArrayToImage(byte[] array) {
+    public static Bitmap convertByteArrayToImage(byte [] array) {
         return BitmapFactory.decodeByteArray(array,0,array.length);
     }
 }

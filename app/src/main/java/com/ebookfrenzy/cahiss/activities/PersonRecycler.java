@@ -1,9 +1,11 @@
 package com.ebookfrenzy.cahiss.activities;
 
 import android.app.Activity;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,11 +51,12 @@ public class PersonRecycler extends RecyclerView.Adapter<PersonView> {
         holder.imageView.setImageBitmap(ImageConverter.convertByteArrayToImage(person.getImage()));
         holder.name.setText(person.getName());
 
-        holder.delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                database.deletePerson(person);
-            }
+        holder.delete.setOnClickListener(view -> {
+            database.deletePerson(person);
+
+            Toast.makeText(context, "Slettet", Toast.LENGTH_SHORT).show();
+            context.finish();
+            context.startActivity(context.getIntent());
         });
     }
 
