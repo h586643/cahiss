@@ -32,26 +32,28 @@ public abstract class PersonDatabase extends RoomDatabase {
 
             // Adding Iselin to database
             Person iselin = new Person();
+
             iselin.setName("Iselin");
             Bitmap ise = BitmapFactory.decodeResource(context.getResources(), R.drawable.iselin);
-            assert ise != null;
             iselin.setImage(ImageConverter.convertImageToByte(ise));
 
             personDB.personDAO().insertPerson(iselin);
 
             // Adding Isabella to database
-            com.ebookfrenzy.cahiss.utils.Person isabella = new com.ebookfrenzy.cahiss.utils.Person();
+            Person isabella = new Person();
+
             isabella.setName("Isabella");
             Bitmap isa = BitmapFactory.decodeResource(context.getResources(), R.drawable.isabella);
-            iselin.setImage(ImageConverter.convertImageToByte(isa));
+            isabella.setImage(ImageConverter.convertImageToByte(isa));
 
             personDB.personDAO().insertPerson(isabella);
 
             // Adding Cathrine to database hiho
-            com.ebookfrenzy.cahiss.utils.Person cathrine = new com.ebookfrenzy.cahiss.utils.Person();
+            Person cathrine = new Person();
+
             cathrine.setName("Cathrine");
             Bitmap cat = BitmapFactory.decodeResource(context.getResources(), R.drawable.cathrine);
-            iselin.setImage(ImageConverter.convertImageToByte(cat));
+            cathrine.setImage(ImageConverter.convertImageToByte(cat));
 
             personDB.personDAO().insertPerson(cathrine);
 
