@@ -1,12 +1,17 @@
 package com.ebookfrenzy.cahiss.utils;
 
-import androidx.room.*;
+import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.Query;
+import androidx.room.Update;
+
 import java.util.List;
 
 @Dao
 public interface PersonDAO {
 
-    @Query("Select * from persons")
+    @Query("SELECT * FROM Persons")
     List<Person> getAllPersons();
 
     @Insert
