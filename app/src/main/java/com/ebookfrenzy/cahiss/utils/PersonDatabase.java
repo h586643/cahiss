@@ -33,7 +33,7 @@ public abstract class PersonDatabase extends RoomDatabase {
             // Adding Iselin to database
             Person iselin = new Person();
             iselin.setName("Iselin");
-            Bitmap ise = BitmapFactory.decodeResource(context.getResources(), R.mipmap.iselin_animal);
+            Bitmap ise = BitmapFactory.decodeResource(context.getResources(), R.drawable.iselin);
             assert ise != null;
             iselin.setImage(ImageConverter.convertImageToByte(ise));
 
@@ -42,7 +42,7 @@ public abstract class PersonDatabase extends RoomDatabase {
             // Adding Isabella to database
             com.ebookfrenzy.cahiss.utils.Person isabella = new com.ebookfrenzy.cahiss.utils.Person();
             isabella.setName("Isabella");
-            Bitmap isa = BitmapFactory.decodeResource(context.getResources(), R.mipmap.isabella_animal);
+            Bitmap isa = BitmapFactory.decodeResource(context.getResources(), R.drawable.isabella);
             iselin.setImage(ImageConverter.convertImageToByte(isa));
 
             personDB.personDAO().insertPerson(isabella);
@@ -50,7 +50,7 @@ public abstract class PersonDatabase extends RoomDatabase {
             // Adding Cathrine to database hiho
             com.ebookfrenzy.cahiss.utils.Person cathrine = new com.ebookfrenzy.cahiss.utils.Person();
             cathrine.setName("Cathrine");
-            Bitmap cat = BitmapFactory.decodeResource(context.getResources(), R.mipmap.cathrine_animal);
+            Bitmap cat = BitmapFactory.decodeResource(context.getResources(), R.drawable.cathrine);
             iselin.setImage(ImageConverter.convertImageToByte(cat));
 
             personDB.personDAO().insertPerson(cathrine);
