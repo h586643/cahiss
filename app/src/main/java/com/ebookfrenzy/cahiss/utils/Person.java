@@ -14,7 +14,7 @@ public class Person {
     String name;
 
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
-    byte[] image;
+    byte [] image;
 
     boolean correctPerson;
 
@@ -44,7 +44,7 @@ public class Person {
     }
 
     // Getter & setter for image
-    public byte[] getImage() {
+    public byte [] getImage() {
 
         return image;
     }
