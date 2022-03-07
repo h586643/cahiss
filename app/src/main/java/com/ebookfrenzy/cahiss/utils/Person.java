@@ -1,4 +1,5 @@
-package com.ebookfrenzy.cahiss.utils;
+package com.ebookfrenzy.
+        cahiss.utils;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -6,8 +7,6 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "Persons")
 public class Person {
-
-    // Class (database) variables
     @PrimaryKey(autoGenerate = true)
     int id;
 

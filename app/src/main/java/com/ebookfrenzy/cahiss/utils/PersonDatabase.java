@@ -1,6 +1,5 @@
 package com.ebookfrenzy.cahiss.utils;
 
-import android.app.Person;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -32,9 +31,10 @@ public abstract class PersonDatabase extends RoomDatabase {
             ).allowMainThreadQueries().build();
 
             // Adding Iselin to database
-            com.ebookfrenzy.cahiss.utils.Person iselin = new com.ebookfrenzy.cahiss.utils.Person();
+            Person iselin = new Person();
             iselin.setName("Iselin");
             Bitmap ise = BitmapFactory.decodeResource(context.getResources(), R.mipmap.iselin_animal);
+            assert ise != null;
             iselin.setImage(ImageConverter.convertImageToByte(ise));
 
             personDB.personDAO().insertPerson(iselin);
@@ -47,7 +47,7 @@ public abstract class PersonDatabase extends RoomDatabase {
 
             personDB.personDAO().insertPerson(isabella);
 
-            // Adding Cathrine to database
+            // Adding Cathrine to database hiho
             com.ebookfrenzy.cahiss.utils.Person cathrine = new com.ebookfrenzy.cahiss.utils.Person();
             cathrine.setName("Cathrine");
             Bitmap cat = BitmapFactory.decodeResource(context.getResources(), R.mipmap.cathrine_animal);
