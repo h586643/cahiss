@@ -52,10 +52,35 @@ public class QuizActivity extends AppCompatActivity {
         model.getScore().observe(this, scoreObserver);
 
         personDAO = PersonDatabase.getDBInstance(this).personDAO();
+
+        List<Person> personList = personDAO.getAllPersons();
+
+        // Generating random new person
+        Randomizer randomizer = new Randomizer(personList);
+
+        ImageView imageView = findViewById(R.id.personPicture);
+        Button answer1 = findViewById(R.id.answer1);
+        Button answer2 = findViewById(R.id.answer2);
+        Button answer3 = findViewById(R.id.answer3);
+
+        // Setting background color
+        answer1.setBackgroundColor(getResources().getColor(R.color.white));
+        answer2.setBackgroundColor(getResources().getColor(R.color.white));
+        answer3.setBackgroundColor(getResources().getColor(R.color.white));
+
+        correctPerson = randomizer.generateCorrectPerson();
+        List<Person> answerList = randomizer.generateAnswerOptions();
+        imageView.setImageBitmap(ImageConverter.convertByteArrayToImage(correctPerson.getImage()));
+
+        // Setting answers
+        answer1.setText(answerList.get(0).getName());
+        answer2.setText(answerList.get(1).getName());
+        answer3.setText(answerList.get(2).getName());
+
+        onClickAnswer(onNext, answer1, answer2, answer3, correctPerson, score, model);
     }
 
     public void onNextQuestion(View view) {
-        personDAO = PersonDatabase.getDBInstance(this).personDAO();
 
         List<Person> personList = personDAO.getAllPersons();
 
@@ -96,7 +121,7 @@ public class QuizActivity extends AppCompatActivity {
         answer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (updateScore(p, answer1, score, model)) {
+                if (updateScore(p, answer2, score, model)) {
                     answer2.setBackgroundColor(getResources().getColor(R.color.green));
                     resultView.setText("Riktig svar!");
                 } else {
@@ -109,7 +134,7 @@ public class QuizActivity extends AppCompatActivity {
         answer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (updateScore(p, answer1, score, model)) {
+                if (updateScore(p, answer3, score, model)) {
                     answer3.setBackgroundColor(getResources().getColor(R.color.green));
                     resultView.setText("Riktig svar!");
                 } else {
