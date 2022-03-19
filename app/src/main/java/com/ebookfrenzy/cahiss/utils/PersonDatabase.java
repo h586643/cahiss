@@ -35,7 +35,10 @@ public abstract class PersonDatabase extends RoomDatabase {
 
             iselin.setName("Iselin");
             Bitmap ise = BitmapFactory.decodeResource(context.getResources(), R.drawable.iselin);
-            iselin.setImage(ImageConverter.convertImageToByte(ise));
+            if(ise != null) {
+                iselin.setImage(ImageConverter.convertImageToByte(ise));
+            }
+
 
             personDB.personDAO().insertPerson(iselin);
 
@@ -44,8 +47,9 @@ public abstract class PersonDatabase extends RoomDatabase {
 
             isabella.setName("Isabella");
             Bitmap isa = BitmapFactory.decodeResource(context.getResources(), R.drawable.isabella);
-            isabella.setImage(ImageConverter.convertImageToByte(isa));
-
+            if(isa != null) {
+                isabella.setImage(ImageConverter.convertImageToByte(isa));
+            }
             personDB.personDAO().insertPerson(isabella);
 
             // Adding Cathrine to database hiho
@@ -53,8 +57,9 @@ public abstract class PersonDatabase extends RoomDatabase {
 
             cathrine.setName("Cathrine");
             Bitmap cat = BitmapFactory.decodeResource(context.getResources(), R.drawable.cathrine);
-            cathrine.setImage(ImageConverter.convertImageToByte(cat));
-
+            if(cat != null) {
+                cathrine.setImage(ImageConverter.convertImageToByte(cat));
+            }
             personDB.personDAO().insertPerson(cathrine);
 
         }

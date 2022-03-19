@@ -48,8 +48,13 @@ public class PersonRecycler extends RecyclerView.Adapter<PersonView> {
         Person person = personList.get(position);
         database = PersonDatabase.getDBInstance(context).personDAO();
 
-        holder.imageView.setImageBitmap(ImageConverter.convertByteArrayToImage(person.getImage()));
-        holder.name.setText(person.getName());
+        if (person.getImage() != null) {
+            holder.imageView.setImageBitmap(ImageConverter.convertByteArrayToImage(person.getImage()));
+        }
+
+        if (person.getName() != null) {
+            holder.name.setText(person.getName());
+        }
 
         holder.delete.setOnClickListener(view -> {
             database.deletePerson(person);
