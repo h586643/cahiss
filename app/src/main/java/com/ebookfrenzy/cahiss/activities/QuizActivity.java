@@ -29,6 +29,7 @@ public class QuizActivity extends AppCompatActivity {
     PersonDAO personDAO;
     Score score;
     TextView resultView;
+    TextView scoreView;
     Button onNext;
 
     @Override
@@ -38,6 +39,9 @@ public class QuizActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
         onNext = findViewById(R.id.nextQuestionButton);
         resultView = findViewById(R.id.result);
+        scoreView =findViewById(R.id.score);
+
+
         score = new Score();
 
         model = new ViewModelProvider(this).get(QuizViewModel.class);
@@ -45,7 +49,7 @@ public class QuizActivity extends AppCompatActivity {
         final Observer<String> scoreObserver = new Observer<String>() {
             @Override
             public void onChanged(@Nullable final String score) {
-                resultView.setText(score);
+                scoreView.setText(score);
             }
         };
 
@@ -77,7 +81,9 @@ public class QuizActivity extends AppCompatActivity {
         answer2.setText(answerList.get(1).getName());
         answer3.setText(answerList.get(2).getName());
 
+
         onClickAnswer(onNext, answer1, answer2, answer3, correctPerson, score, model);
+
     }
 
     public void onNextQuestion(View view) {
@@ -112,10 +118,12 @@ public class QuizActivity extends AppCompatActivity {
             if (updateScore(p, answer1, score, model)) {
                 answer1.setBackgroundColor(getResources().getColor(R.color.green));
                 resultView.setText("Riktig svar!");
+
             } else {
                 answer1.setBackgroundColor(getResources().getColor(R.color.red));
                 resultView.setText("Feil svar.");
             }
+
         });
 
         answer2.setOnClickListener(new View.OnClickListener() {
@@ -124,6 +132,7 @@ public class QuizActivity extends AppCompatActivity {
                 if (updateScore(p, answer2, score, model)) {
                     answer2.setBackgroundColor(getResources().getColor(R.color.green));
                     resultView.setText("Riktig svar!");
+
                 } else {
                     answer2.setBackgroundColor(getResources().getColor(R.color.red));
                     resultView.setText("Feil svar.");
@@ -137,6 +146,7 @@ public class QuizActivity extends AppCompatActivity {
                 if (updateScore(p, answer3, score, model)) {
                     answer3.setBackgroundColor(getResources().getColor(R.color.green));
                     resultView.setText("Riktig svar!");
+
                 } else {
                     answer3.setBackgroundColor(getResources().getColor(R.color.red));
                     resultView.setText("Feil svar.");

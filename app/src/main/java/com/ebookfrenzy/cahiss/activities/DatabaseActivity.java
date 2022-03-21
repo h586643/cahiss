@@ -35,7 +35,6 @@ public class DatabaseActivity extends AppCompatActivity {
     }
 
     public void sortAlphabetically(View view){
-
         personDAO = PersonDatabase.getDBInstance(this).personDAO();
         List<Person> personList = personDAO.getAllPersons();
 

@@ -16,7 +16,6 @@ public class Person {
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
     byte [] image;
 
-    boolean correctPerson;
 
     public Person() {
     }
@@ -54,12 +53,4 @@ public class Person {
         this.image = image;
     }
 
-    // Getter & setter for correct person
-    public boolean getCorrectPerson() {
-        return correctPerson;
-    }
-
-    public void setCorrectPerson(Boolean correctPerson) {
-        this.correctPerson = correctPerson;
-    }
 }

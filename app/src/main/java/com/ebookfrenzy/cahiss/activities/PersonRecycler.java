@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.RoomDatabase;
 
@@ -34,12 +35,11 @@ public class PersonRecycler extends RecyclerView.Adapter<PersonView> {
     @NonNull
     @Override
     public PersonView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(
+        CardView view = (CardView) LayoutInflater.from(parent.getContext()).inflate(
                 R.layout.activity_person_view,
                 parent,
                 false
         );
-
         return new PersonView(view);
     }
 
@@ -58,16 +58,19 @@ public class PersonRecycler extends RecyclerView.Adapter<PersonView> {
 
         holder.delete.setOnClickListener(view -> {
             database.deletePerson(person);
+            // slettet i Liten
+            personList.remove(position);
+            this.notifyDataSetChanged();
 
             Toast.makeText(context, "Slettet", Toast.LENGTH_SHORT).show();
-            context.finish();
-            context.startActivity(context.getIntent());
+            // context.finish();
+            // context.startActivity(context.getIntent());
         });
     }
 
     @Override
     public int getItemCount() {
-
+        // return database.getAllPersons().size();
         return personList.size();
     }
 }

@@ -55,7 +55,7 @@ public class Randomizer {
 
         this.correctPerson = personList.get(index);
         setPreviousPerson(correctPerson);
-        this.correctPerson.setCorrectPerson(true);
+        //this.correctPerson.setCorrectPerson(true);
 
         return this.correctPerson;
     }

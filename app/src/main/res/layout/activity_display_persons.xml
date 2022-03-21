@@ -35,12 +35,12 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/userRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="70dp"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:context=".DatabaseActivity"
-        android:id="@+id/userRecyclerView">
+        tools:context=".DatabaseActivity">
 
     </androidx.recyclerview.widget.RecyclerView>
 </RelativeLayout>
